@@ -183,6 +183,7 @@ public class SistemaInventario {
         System.out.println("║           REALIZAR VENTA                   ║");
         System.out.println("╚════════════════════════════════════════════╝");
 
+        // Solicitar nombre del producto al usuario
         System.out.print("\nIngrese nombre del producto: ");
         String nombreProducto = scanner.nextLine().trim();
 
