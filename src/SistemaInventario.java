@@ -122,4 +122,23 @@ public class SistemaInventario {
     }
 }
 
+  // Muestra el menú principal y gestiona las opciones del usuario
+    public void menuPrincipal() {
+        boolean continuar = true;
 
+        System.out.println("=================================================");
+        System.out.println("   SISTEMA DE GESTIÓN DE INVENTARIO Y VENTAS");
+        System.out.println("=================================================\n");
+
+        while (continuar) {
+            System.out.println("\n╔════════════════════════════════════════════╗");
+            System.out.println("║           MENÚ PRINCIPAL                   ║");
+            System.out.println("╠════════════════════════════════════════════╣");
+            System.out.println("║  1. Ingresar nuevo producto                ║");
+            System.out.println("║  2. Realizar venta                         ║");
+            System.out.println("║  3. Generar reporte de ventas              ║");
+            System.out.println("║  4. Generar reporte de stock               ║");
+            System.out.println("║  5. Salir                                  ║");
+            System.out.println("╚════════════════════════════════════════════╝");
+            System.out.print("Seleccione una opción: ");
+        }}
