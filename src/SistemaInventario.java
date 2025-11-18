@@ -178,4 +178,61 @@ public class SistemaInventario {
 
     // Agrega un nuevo producto al inventario o actualiza la cantidad si ya existe
     // Implementa validaciones según el diagrama de flujo
+ private void realizarVenta() {
+        System.out.println("\n╔════════════════════════════════════════════╗");
+        System.out.println("║           REALIZAR VENTA                   ║");
+        System.out.println("╚════════════════════════════════════════════╝");
 
+        System.out.print("\nIngrese nombre del producto: ");
+        String nombreProducto = scanner.nextLine().trim();
+
+        // Buscar el producto en el inventario
+        Producto producto = buscarProducto(nombreProducto);
+
+        if (producto == null) {
+            System.out.println("\n Error: Producto no encontrado.");
+            return;
+        }
+
+        try {
+            System.out.print("Ingrese cantidad a vender: ");
+            int cantidadVender = scanner.nextInt();
+            scanner.nextLine(); // Limpiar buffer
+
+            if (cantidadVender <= 0) {
+                System.out.println("\n Error: La cantidad debe ser mayor a 0.");
+                return;
+            }
+
+            // Verificar stock suficiente
+            if (producto.getCantidad() < cantidadVender) {
+                System.out.println("\n Error: Stock insuficiente.");
+                System.out.println("   Stock disponible: " + producto.getCantidad());
+                System.out.println("   Cantidad solicitada: " + cantidadVender);
+            } else {
+                // Calcular total
+                double total = cantidadVender * producto.getPrecio();
+
+                // Reducir stock del producto
+                producto.reducirStock(cantidadVender);
+
+                // Crear y registrar la venta
+                Venta nuevaVenta = new Venta(nombreProducto, cantidadVender, producto.getPrecio());
+                ventas.add(nuevaVenta);
+
+                // Mostrar información de la venta
+                System.out.println("\n✓ Venta realizada exitosamente!");
+                System.out.println("════════════════════════════════════════════");
+                System.out.println("Producto: " + nombreProducto);
+                System.out.println("Cantidad: " + cantidadVender);
+                System.out.println("Precio unitario: $" + String.format("%.2f", producto.getPrecio()));
+                System.out.println("────────────────────────────────────────────");
+                System.out.println("TOTAL A PAGAR: $" + String.format("%.2f", total));
+                System.out.println("════════════════════════════════════════════");
+                System.out.println("Stock restante: " + producto.getCantidad());
+            }
+        } catch (InputMismatchException e) {
+            System.out.println("\n Error: Debe ingresar un número válido para la cantidad.");
+            scanner.nextLine(); // Limpiar buffer
+        }
+    }
