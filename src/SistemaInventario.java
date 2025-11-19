@@ -296,3 +296,5 @@ public class SistemaInventario {
             scanner.nextLine(); 
         }
     }
+
+// Genera y muestra el reporte de todas las ventas realizadas
