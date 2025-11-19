@@ -352,3 +352,18 @@ System.out.println("\n═══════════════════�
             
             valorTotalInventario += producto.getCantidad() * producto.getPrecio();
         }
+
+                System.out.println("\n════════════════════════════════════════════");
+        System.out.println("VALOR TOTAL DEL INVENTARIO: $" + String.format("%.2f", valorTotalInventario));
+        System.out.println("════════════════════════════════════════════");
+    
+        // Busca un producto en el inventario por su nombre
+    // Retorna el producto encontrado o null si no existe
+    private Producto buscarProducto(String nombre) {
+        for (Producto producto : inventario) {
+            if (producto.getNombre().equalsIgnoreCase(nombre)) {
+                return producto;
+            }
+        }
+        return null;
+    }
