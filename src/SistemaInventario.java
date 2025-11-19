@@ -218,10 +218,24 @@ public class SistemaInventario {
             }
         }
 
+         // Buscar si el producto ya existe en el inventario
+        Producto productoExistente = buscarProducto(nombre);
 
+        if (productoExistente != null) {
+            // Si existe, actualizar cantidad
+            productoExistente.aumentarStock(cantidad);
+            System.out.println("\n✓ Cantidad del producto actualizada exitosamente.");
+            System.out.println("  Nueva cantidad: " + productoExistente.getCantidad());
+        } else {
+            // Si no existe, crear nuevo producto
+            Producto nuevoProducto = new Producto(nombre, cantidad, precio);
+            inventario.add(nuevoProducto);
+            System.out.println("\n✓ Producto agregado exitosamente.");
+        }
+    
 
-
-
+    // Realiza una venta, actualiza el stock y registra la transacción
+    // Implementa el diagrama de flujo de realizar venta
  private void realizarVenta() {
         System.out.println("\n╔════════════════════════════════════════════╗");
         System.out.println("║           REALIZAR VENTA                   ║");
