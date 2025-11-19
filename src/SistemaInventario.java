@@ -298,3 +298,8 @@ public class SistemaInventario {
     }
 
 // Genera y muestra el reporte de todas las ventas realizadas
+
+ private void generarReporteVentas() {
+        System.out.println("\n╔════════════════════════════════════════════╗");
+        System.out.println("║         REPORTE DE VENTAS                  ║");
+        System.out.println("╚════════════════════════════════════════════╝");}
