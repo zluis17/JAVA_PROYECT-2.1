@@ -303,3 +303,20 @@ public class SistemaInventario {
         System.out.println("\n╔════════════════════════════════════════════╗");
         System.out.println("║         REPORTE DE VENTAS                  ║");
         System.out.println("╚════════════════════════════════════════════╝");}
+
+
+        if (ventas.isEmpty()) {
+            System.out.println("\nNo hay ventas registradas.");
+            return;
+        }
+
+        double totalGeneral = 0.0;
+        int numeroVenta = 1;
+
+        for (Venta venta : ventas) {
+            System.out.println("\n--- Venta #" + numeroVenta + " ---");
+            System.out.println(venta.toString());
+            System.out.println("─────────────────────────────────────────────");
+            totalGeneral += venta.getTotal();
+            numeroVenta++;
+        }
