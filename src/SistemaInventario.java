@@ -178,6 +178,16 @@ public class SistemaInventario {
 
     // Agrega un nuevo producto al inventario o actualiza la cantidad si ya existe
     // Implementa validaciones según el diagrama de flujo
+
+    private void agregarProducto() {
+        System.out.println("\n╔════════════════════════════════════════════╗");
+        System.out.println("║        AGREGAR NUEVO PRODUCTO              ║");
+        System.out.println("╚════════════════════════════════════════════╝");}
+
+
+
+
+
  private void realizarVenta() {
         System.out.println("\n╔════════════════════════════════════════════╗");
         System.out.println("║           REALIZAR VENTA                   ║");
@@ -190,6 +200,7 @@ public class SistemaInventario {
         // Buscar el producto en el inventario
         Producto producto = buscarProducto(nombreProducto);
 
+         // Validar que el producto exista en el inventario
         if (producto == null) {
             System.out.println("\n Error: Producto no encontrado.");
             return;
@@ -234,6 +245,6 @@ public class SistemaInventario {
             }
         } catch (InputMismatchException e) {
             System.out.println("\n Error: Debe ingresar un número válido para la cantidad.");
-            scanner.nextLine(); // Limpiar buffer
+            scanner.nextLine(); 
         }
     }
