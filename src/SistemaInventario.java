@@ -333,3 +333,22 @@ System.out.println("\n═══════════════════�
     System.out.println("\n╔════════════════════════════════════════════╗");
         System.out.println("║         REPORTE DE STOCK                   ║");
         System.out.println("╚════════════════════════════════════════════╝");
+
+
+          if (inventario.isEmpty()) {
+            System.out.println("\nInventario vacío.");
+            return;
+        }
+
+        System.out.println("\nProductos en inventario: " + inventario.size());
+        System.out.println("════════════════════════════════════════════");
+
+        double valorTotalInventario = 0.0;
+
+        for (Producto producto : inventario) {
+            System.out.println("\n" + producto.toString());
+            System.out.println("Valor en stock: $" + String.format("%.2f", producto.getCantidad() * producto.getPrecio()));
+            System.out.println("────────────────────────────────────────────");
+            
+            valorTotalInventario += producto.getCantidad() * producto.getPrecio();
+        }
