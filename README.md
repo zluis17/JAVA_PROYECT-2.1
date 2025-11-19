@@ -1,18 +1,14 @@
-## Getting Started
+Sistema de Gestión de Ventas y Control de Stock
+Proyecto elaborado por: Néstor Cubillos, Camilo Garzón y Luis Quintero
+📌 Descripción del Proyecto
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Este es un sistema desarrollado en Java para la gestión de ventas y el reporte de inventario, permitiendo un control eficiente de productos y existencias.
+El objetivo principal es ofrecer una herramienta sencilla pero robusta para administrar información relacionada con:
 
-## Folder Structure
+Registro y gestión de productos
 
-The workspace contains two folders by default, where:
+Control y actualización de stock
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+Procesamiento de ventas
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+Generación de reportes
