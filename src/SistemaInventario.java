@@ -320,3 +320,12 @@ public class SistemaInventario {
             totalGeneral += venta.getTotal();
             numeroVenta++;
         }
+
+System.out.println("\n════════════════════════════════════════════");
+        System.out.println("TOTAL DE VENTAS: " + (numeroVenta - 1));
+        System.out.println("INGRESOS TOTALES: $" + String.format("%.2f", totalGeneral));
+        System.out.println("════════════════════════════════════════════");
+    
+
+    // Genera y muestra el reporte del stock actual del inventario
+    // Implementa el diagrama de flujo de generar reporte de stock
