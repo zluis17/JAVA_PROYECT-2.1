@@ -329,3 +329,7 @@ System.out.println("\n═══════════════════�
 
     // Genera y muestra el reporte del stock actual del inventario
     // Implementa el diagrama de flujo de generar reporte de stock
+
+    System.out.println("\n╔════════════════════════════════════════════╗");
+        System.out.println("║         REPORTE DE STOCK                   ║");
+        System.out.println("╚════════════════════════════════════════════╝");
