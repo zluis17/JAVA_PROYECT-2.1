@@ -185,6 +185,40 @@ public class SistemaInventario {
         System.out.println("╚════════════════════════════════════════════╝");}
 
 
+        boolean datosValidos = false;
+        String nombre = "";
+        int cantidad = 0;
+        double precio = 0.0;
+
+        // Ciclo de validación según el diagrama de flujo
+        while (!datosValidos) {
+            try {
+                System.out.print("\nIngrese nombre del producto: ");
+                nombre = scanner.nextLine().trim();
+
+                System.out.print("Ingrese cantidad disponible: ");
+                cantidad = scanner.nextInt();
+
+                System.out.print("Ingrese precio por unidad: $");
+                precio = scanner.nextDouble();
+                scanner.nextLine(); 
+
+                // Validación de datos según el diagrama de flujo
+                if (!nombre.isEmpty() && cantidad > 0 && precio > 0) {
+                    datosValidos = true;
+                } else {
+                    System.out.println("\n Error: Datos inválidos. Intente nuevamente.");
+                    System.out.println("   - El nombre no puede estar vacío");
+                    System.out.println("   - La cantidad debe ser mayor a 0");
+                    System.out.println("   - El precio debe ser mayor a 0");
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("\n Error: Entrada inválida. Use números para cantidad y precio.");
+                scanner.nextLine(); // Limpiar buffer
+            }
+        }
+
+
 
 
 
